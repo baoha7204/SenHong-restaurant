@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực đơn</title>
+    <link rel="stylesheet" href="./Assets/style.css">
+    <script src="https://kit.fontawesome.com/311807c634.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header__container">
+            <!-- Logo -->
+            <div class="logo"></div>
+            <!-- Navigation bar -->
+            <div class="header__navbar">
+			    <label for="checkbox_toggle" class="navbar__hamburger">
+                    <input type="checkbox" id="checkbox_toggle">
+                </label>
+                <nav class="navbar__list">
+                    <li class="list__item">
+                        <a href="#" class="item--introduction" title="Giới thiệu">Giới thiệu</a>
+                    </li>
+                    <li class="list__item mobile-list__item--active">
+                        <a href="#" class="item--menu" title="Giới thiệu">Thực đơn</a>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="item--booking" title="Giới thiệu">Đặt bàn</a>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="item--store-locator" title="Hệ thống cửa hàng">Hệ thống</a>
+                    </li>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu section -->
+    <section id="menu">
+        <div class="menu__container">
+            <div class="menu__side-navigation-wrapper">
+                <div class="title-wrapper">Thực đơn</div>
+                <div class="side-navigation">
+                    <ul>
+                        <li class="side-navigation__item">
+                            <input type="checkbox" id="navigation-item-1" value="Bánh"><label for="navigation-item-1">Bánh</label>
+                        </li>
+                        <li class="side-navigation__item">
+                            <input type="checkbox" id="navigation-item-2" value="Bún"><label for="navigation-item-2">Bún</label>
+                        </li>
+                        <li class="side-navigation__item">
+                            <input type="checkbox" id="navigation-item-3" value="Cá"><label for="navigation-item-3">Cá</label>
+                        </li>
+                        <li class="side-navigation__item">
+                            <input type="checkbox" id="navigation-item-4" value="Chè"><label for="navigation-item-4">Chè</label>
+                        </li>
+                        <li class="side-navigation__item">
+                            <input type="checkbox" id="navigation-item-default" value="all"><label for="navigation-item-default">Tất cả</label>
+                        </li>
+                        <button type="submit" class="button search-button">
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </button>
+                    </ul>
+                    <select name="tags" id="tags" multiple></select>
+                </div>
+            </div>
+            <div class="menu__detail">
+                <div class="detail__list">
+                    <div class="title-wrapper">Tất cả</div>
+                    <div class="list-food">
+                        <div class="food__item">
+                            <div class="image-container">
+                                <div class="food-item__image" style="background-image: url(./Assets/img/food_1.jpg);"></div>
+                            </div>
+                            <div class="food-item__name">Gỏi củ hủ dừa</div>
+                            <div class="food-item__price">60.000đ</div>
+                        </div>
+                        <div class="food__item">
+                            <div class="image-container">
+                                <div class="food-item__image" style="background-image: url(./Assets/img/food_2.jpg);"></div>
+                            </div>
+                            <div class="food-item__name">Gỏi củ hủ dừa</div>
+                            <div class="food-item__price">60.000đ</div>
+                        </div>
+                        <div class="food__item">
+                            <div class="image-container">
+                                <div class="food-item__image" style="background-image: url(./Assets/img/food_3.jpg);"></div>
+                            </div>
+                            <div class="food-item__name">Gỏi củ hủ dừa</div>
+                            <div class="food-item__price">60.000đ</div>
+                        </div>
+                        <div class="food__item">
+                            <div class="image-container">
+                                <div class="food-item__image" style="background-image: url(./Assets/img/food_4.jpg);"></div>
+                            </div>
+                            <div class="food-item__name">Gỏi củ hủ dừa</div>
+                            <div class="food-item__price">60.000đ</div>
+                        </div>
+                        <div class="food__item">
+                            <div class="image-container">
+                                <div class="food-item__image" style="background-image: url(./Assets/img/food_4.jpg);"></div>
+                            </div>
+                            <div class="food-item__name">Gỏi củ hủ dừa</div>
+                            <div class="food-item__price">60.000đ</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-cells">
+                    <i class="diamond-shape diamond-shape--active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="40" viewBox="0 0 39 40" fill="none">
+                            <path d="M1.71839 20L19.5 1.44528L37.2816 20L19.5 38.5547L1.71839 20Z" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <div data-index="1">1</div>
+                    </i>
+                    <i class="diamond-shape">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="40" viewBox="0 0 39 40" fill="none">
+                            <path d="M1.71839 20L19.5 1.44528L37.2816 20L19.5 38.5547L1.71839 20Z" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <div data-index="2">2</div>
+                    </i>
+                    <i class="diamond-shape">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="40" viewBox="0 0 39 40" fill="none">
+                            <path d="M1.71839 20L19.5 1.44528L37.2816 20L19.5 38.5547L1.71839 20Z" stroke="black" stroke-width="2"/>
+                        </svg>
+                        <div data-index="3">3</div>
+                    </i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer__container">
+            <div class="footer__upper">
+                <div class="logo"></div>
+                <div class="footer__card upper__item">
+                    <div class="upper-item__title">
+                        <h4>trụ sở chính</h4>
+                        <h4 data-title="nhà hàng miền tây sen hồng">nhà hàng miền tây sen hồng</h4>
+                    </div>
+                    <div class="upper-item__body">
+                        <li class="body__text"><p><strong>MST:</strong> 0762953411</p></li>
+                        <li class="body__text"><p><strong>Địa chỉ:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore non quos sit voluptatibus recusandae. Ut voluptatem maxime eum. Asperiores quaerat fugit aut nemo quas ad, odio error qui quis accusamus!</p></li>
+                        <li class="body__text"><p><strong>Hotline:</strong> 1900 123456</p></li>
+                    </div>
+                </div>
+                <div class="footer__social-media upper__item">
+                    <div class="upper-item__title">
+                        <h4>mạng xã hội</h4>
+                    </div>
+                    <div class="upper-item__body">
+                        <button type="button" class="button" id="facebook"><a href="https://www.facebook.com/bao.haminhquoc/" title="Facebook Sen Hồng" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></button>
+                        <button type="button" class="button" id="facebook"><a href="https://www.instagram.com/bao_ha_real/" title="Instagram Sen Hồng" target="_blank"><i class="fa-brands fa-instagram"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">Sen Hồng &copy; 2023</div>
+            <div class="footer__scrollUp">
+                <button type="button" class="button" id="up"><a href='#'><i class="fa-solid fa-arrow-up"></i></a></button>
+            </div>
+        </div>
+    </footer>
+    <!-- JS Script -->
+    <script src="./Assets/script.js"></script>
+</body>
+</html>

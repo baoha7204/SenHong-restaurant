@@ -1,0 +1,44 @@
+{
+    "options": [
+        {
+            "option-name": "Bánh",
+            "option-value": "banh"
+        },
+        {
+            "option-name": "Bún",
+            "option-value": "bun"
+        },
+        {
+            "option-name": "Cá",
+            "option-value": "ca"
+        },
+        {
+            "option-name": "Chè",
+            "option-value": "che"
+        },
+        {
+            "option-name": "Gỏi",
+            "option-value": "goi"
+        },
+        {
+            "option-name": "Lẩu",
+            "option-value": "lau"
+        },
+        {
+            "option-name": "Gà",
+            "option-value": "ga"
+        },
+        {
+            "option-name": "Mắm",
+            "option-value": "mam"
+        },
+        {
+            "option-name": "Hủ tiếu",
+            "option-value": "hutieu"
+        },
+        {
+            "option-name": "Món ăn dân dã",
+            "option-value": "other"
+        }
+    ]
+}
