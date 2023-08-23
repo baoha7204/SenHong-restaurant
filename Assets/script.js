@@ -86,16 +86,23 @@ resize_ob.observe(sideNavigation);
  */
 const tagsAPI = 'http://localhost:3000/options';
 const selectTags = $('#tags');
-fetch(tagsAPI)
-    .then((response) => response.json())
-    .then((tags) => {
-        const tagsHTML = tags.map((tag) => {
-            return `<option value='${tag['option-value']}'>${tag['option-name']}</option>`
-        });
-        selectTags.innerHTML = tagsHTML.join('\n');
+async function getApi() {
+    const response = await fetch(tagsAPI);
+    const tags = await response.json();
+    const tagsHTML = tags.map((tag) => {
+      return `<option value='${tag["option-value"]}'>${tag["option-name"]}</option>`;
     });
-
-
+    selectTags.innerHTML = tagsHTML.join("\n");
+    MultiSelectTag('tags', {
+        rounded: true,    // default true
+        shadow: true,      // default false
+        placeholder: 'Tìm kiếm',  // default Search...
+        onChange: function(values) {
+            console.log(values);
+        }
+    });
+}
+getApi();
 function MultiSelectTag (el, customs = {shadow: false, rounded:true}) {
     var element = null
     var options = null
@@ -334,14 +341,3 @@ function MultiSelectTag (el, customs = {shadow: false, rounded:true}) {
         })
     }
 }
-// selectTags.options
-console.log(Array.from(selectTags.options));
-
-MultiSelectTag('tags', {
-    rounded: true,    // default true
-    shadow: true,      // default false
-    placeholder: 'Tìm kiếm',  // default Search...
-    onChange: function(values) {
-        console.log(values)
-    }
-});
