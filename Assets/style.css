@@ -42,6 +42,10 @@ a{
     text-decoration: none;
 }
 
+a[href^="tel"] {
+	color: inherit;
+}
+
 li {
 	list-style: none;
 }
@@ -340,6 +344,8 @@ header{
 .side-navigation__item input[type=checkbox]{
 	transform: scale(2);
 	margin-right: 1rem;
+	transition: ease-in 0.25s;
+	accent-color: var(--main);
 }
 
 .side-navigation__item label{
@@ -357,11 +363,15 @@ header{
 	transition: ease-in 0.5s;
 }
 
+.side-navigation__item:hover input[type=checkbox]{
+	filter: brightness(80%);
+}
+
 .side-navigation__item:hover label{
 	font-weight: 900;
 }
 
-#tags, .mult-select-tag{
+#tags, .mult-select-tag, .menu__side-navigation-wrapper .title-wrapper .button{
 	display: none;
 }
 
@@ -370,8 +380,8 @@ header{
 /* ----Menu detail---- */
 .list-food{
 	display: grid;
-	grid-template-columns: auto auto;
-	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
 	padding: 5rem;
 	gap: 5rem;
 }
@@ -446,8 +456,10 @@ header{
 	width: 4rem;
 	height: 4rem;
 	cursor: pointer;
+	transition: .2s ease-in-out;
 }
 .diamond-shape svg{
+	fill: var(--bg);
 	position: absolute;
 }
 .diamond-shape div{
@@ -456,6 +468,15 @@ header{
 	font-weight: 600;
 	z-index: 1;
 }
+
+.diamond-shape div a{
+	color: inherit;
+}
+
+.diamond-shape:hover{
+	filter: brightness(80%);
+}
+
 /* ------Active page cell------ */
 .diamond-shape--active svg{
 	fill: var(--food-item);
@@ -465,6 +486,9 @@ header{
 /* ----End Menu detail---- */
 /* ----- Responsive for mobile devices ----- */
 @media (max-width: 480px) {
+	.menu__side-navigation-wrapper{
+		background-color: transparent;
+	}
 	.menu__container{
 		flex-direction: column;
 		gap: 5rem;
@@ -482,6 +506,8 @@ header{
 	}
 	/***Style the multi select tags***/
 	.mult-select-tag {
+		font-size: 1.2rem;
+		margin-top: 1rem;
 		display: flex;
 		width: 100%;
 		flex-direction: column;
@@ -489,19 +515,19 @@ header{
 		position: relative;
 		--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 		--tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-		--border-color: rgb(218, 221, 224);
 	}
 	
 	.mult-select-tag .wrapper {
 		width: 100%;
+		margin-bottom: .5rem;
 	}
 	
 	.mult-select-tag .body {
 		display: flex;
-		border: 1px solid var(--border-color);
+		border: .3rem solid var(--main);
 		background: white;
-		min-height: 2.15rem;
-		width:100%;
+		min-height: 3rem;
+		width: 100%;
 		min-width: 14rem;
 	}
 	
@@ -509,7 +535,7 @@ header{
 		display: flex;
 		flex-wrap: wrap;
 		flex: 1 1 auto;
-		padding: 0.1rem;
+		padding: .1rem;
 	}
 	
 	.mult-select-tag .input-body {
@@ -529,7 +555,7 @@ header{
 	}
 	
 	.mult-select-tag .btn-container {
-		color: #e2eBf0;
+		color: var(--second-main);
 		padding: 0.5rem;
 		display: flex;
 		border-left: 1px solid var(--border-color);
@@ -538,16 +564,20 @@ header{
 	.mult-select-tag button {
 		cursor: pointer;
 		width: 100%;
-		color: #718096;
+		color: var(--main);
 		outline: 0;
 		height: 100%;
 		border: none;
 		padding: 0;
 		background: transparent;
 		background-image: none;
-		-webkit-appearance: none;
 		text-transform: none;
 		margin: 0;
+		transition: .25s ease-in;
+	}
+
+	.mult-select-tag button.clicked {
+		transform: rotate(-180deg);
 	}
 	
 	.mult-select-tag button:first-child {
@@ -557,14 +587,32 @@ header{
 	
 	.mult-select-tag .drawer {
 		position: absolute;
-		background: white;
+		background: var(--second-main);
 		max-height: 15rem;
 		z-index: 40;
 		top: 98%;
 		width: 100%;
 		overflow-y: scroll;
-		border: 1px solid var(--border-color);
-		border-radius: 0.25rem;
+		border: .3rem solid var(--main);
+		border-radius: .25rem;
+	}
+
+	.drawer .input-body .input{
+		background: var(--main);
+		color: var(--second-main);
+	}
+
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: var(--second-main);
+		opacity: 1; /* Firefox */
+	}
+	  
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: var(--second-main);
+	}
+	  
+	::-ms-input-placeholder { /* Microsoft Edge */
+		color: var(--second-main);
 	}
 	
 	.mult-select-tag ul {
@@ -598,7 +646,7 @@ header{
 	.mult-select-tag .item-label {
 		max-width: 100%;
 		line-height: 1;
-		font-size: 0.75rem;
+		font-size: 1.2rem;
 		font-weight: 500;
 		flex: 0 1 auto;
 	}
@@ -627,7 +675,16 @@ header{
 	}
 	
 	.mult-select-tag .rounded {
-		border-radius: .375rem;
+		border-radius: .5rem;
+	}
+	.menu__side-navigation-wrapper .title-wrapper .button{
+		display: inline-block;
+	}
+	.menu__side-navigation-wrapper .title-wrapper span{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: auto;
 	}
 	/***End Style the multi select tags***/
 }
@@ -709,6 +766,10 @@ header{
 /* ---End Menu section---*/
 
 /* ---Footer--- */
+footer{
+	text-decoration: none;
+	color: black;
+}
 .footer__container{
 	position: relative;
 	background-color: var(--header-moving);
@@ -846,12 +907,22 @@ footer .logo{
 
 /* ----- Responsive for mobile devices ----- */
 @media (max-width: 480px) {
-	
+	.footer__upper{
+		gap: 2rem;
+	}
+	footer .logo{
+		width: 40%;
+	}
+	.footer__card .upper-item__title{
+		flex-wrap: wrap;
+	}
+	.footer__card::before{
+		transform: translateY(1rem);
+	}
 }
 
 /* ----- Responsive for tablet devices ----- */
 @media (min-width: 481px) and (max-width: 768px) {
-	
 }
 
 /* ----- Responsive for PC devices ----- */
